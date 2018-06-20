@@ -8,6 +8,8 @@ Add docker key and add docker apt-get repository
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
     sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
+Note that if you are instead installing on Debian, make the appropriate changes to the above commands!
+
 Update apt-get, verify docker-ce will be downloaded from correct repository, install docker-ce, and verify docker is installed
 
 ```

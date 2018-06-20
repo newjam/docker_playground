@@ -1,3 +1,6 @@
 *.swp
 *.pyc
 hm4c
+cpushop
+# controversial but for now no .lock
+Gemfile.lock
