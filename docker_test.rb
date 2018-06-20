@@ -24,17 +24,21 @@ def make_container name, port
   )
 end
 
-hm4c_image = make_image 'hm4c'
-hm4c_image.push
+def stuff name, port, solution
+  image = make_image name
+  image.push
 
-hm4c_container = make_container 'hm4c', '31337'
+  container = make_container name, port
 
-puts 'Starting docker container'
-hm4c_container.start
+  puts 'Starting docker container'
+  container.start
 
-puts  'Running solution'
-puts %x{python2.7 hm4c/hm4c_solution.py}
+  puts 'Running solution'
+  puts %x{#{solution}}
 
-puts 'Stopping docker container'
-hm4c_container.stop
+  puts 'Stopping docker container'
+  container.stop
+end
 
+stuff 'hm4c', '31337', 'python2.7 hm4c/hm4c_solution.py'
+stuff 'cpushop', '43000', 'python2.7 cpushop/cpushop_solution.py'
