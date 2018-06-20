@@ -2,7 +2,6 @@ require 'docker'
 
 # proof of concept for building and running challenges in docker containers from ruby
 
-
 puts 'Creating docker image'
 
 hm4c_image = Docker::Image.build_from_dir('hm4c')
