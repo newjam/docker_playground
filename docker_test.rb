@@ -14,7 +14,7 @@ end
 def make_container name, port
   puts "Creating docker containeri #{name}"
   hm4c_container = Docker::Container.create(
-    'Image' => 'hm4c',
+    'Image' => name,
     'ExposedPorts' => { "#{port}/tcp" => {} },
     'HostConfig' => {
       'PortBindings' => {
