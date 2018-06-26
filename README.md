@@ -34,13 +34,12 @@ Clone hm4c challenge
 
 ```
 git clone https://github.com/newjam/hm4c/
-cd hm4c
 ```
 
 Using socat we can set up a server to listen on a port and run hm4c.py on each clients connect.
 
 ```
-socat tcp-l:31337,crlf,fork system:"python hm4c.py"
+socat tcp-l:31337,crlf,fork system:"python hm4c/hm4c.py"
 ```
 
 Then we can connect using netcat
@@ -54,7 +53,7 @@ Check out [Dockerfile], where the instructions to docer to build the docker imag
 We can build the image thusly:
 
 ```
-docker build -t hm4c .
+docker build -t hm4c hm4c
 ```
 
 And see it listed
