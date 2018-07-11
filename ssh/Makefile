@@ -15,22 +15,22 @@ start:
 	  --gateway=192.168.2.1 \
 	  my-network
 	docker run \
-    --publish 2222:22 \
-    --detach \
-    --rm \
-    --hostname first-stop \
-    --name first-stop \
-    --network my-network \
+	  --publish 2222:22 \
+	  --detach \
+	  --rm \
+	  --hostname first-stop \
+	  --name first-stop \
+	  --network my-network \
 	  --ip=192.168.2.2 \
     first-stop:latest
 	docker run \
-    --detach \
-    --rm \
-    --hostname second-stop \
-    --name second-stop \
-    --network my-network \
+	  --detach \
+	  --rm \
+	  --hostname second-stop \
+	  --name second-stop \
+	  --network second-network \
 	  --ip=192.168.2.3 \
-    second-stop:latest
+	  second-stop:latest
 
 connect:
 	ssh -o UserKnownHostsFile=/dev/null -p 2222 student@localhost
