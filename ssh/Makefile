@@ -22,7 +22,7 @@ start:
 	  --name first-stop \
 	  --network my-network \
 	  --ip=192.168.2.2 \
-    first-stop:latest
+	  first-stop:latest
 	docker run \
 	  --detach \
 	  --rm \
