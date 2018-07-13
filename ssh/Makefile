@@ -28,7 +28,7 @@ start:
 	  --rm \
 	  --hostname second-stop \
 	  --name second-stop \
-	  --network second-network \
+	  --network my-network \
 	  --ip=192.168.2.3 \
 	  second-stop:latest
 
